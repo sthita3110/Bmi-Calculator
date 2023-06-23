@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Input from "../../Shared/Input";
 import Button from "../../Shared/Button";
+import Header from "../Header/Header";
 import { Link } from "react-router-dom";
 const BmiFormMetric = () => {
   const [height, setHeight] = useState("");
@@ -49,21 +50,12 @@ const BmiFormMetric = () => {
   };
   return (
     <>
-      <header>
-        <div className=" text-center">
-          <p className="font-bold text-4xl font-serif tracking-wide mt-2 mb-2 p-2 text-red-900">
-            BMI Calculator
-          </p>
-          <p className=" text-white bg-neutral-600 hover:bg-neutral-400  hover:text-black hover:font-bold hover:tracking-wide p-2 mt-5 font-mono w-auto ">
-            Body Mass Index
-          </p>
-        </div>
-      </header>
+      <Header />
       <div className="border-solid border-2 border-indigo-600 m-5 p-9 flex flex-col justify-evenly md:flex-row md:justify-evenly">
         {/* BMI Calculator Form */}
-        <div className="border-2 border-black p-5">
+        <div className="border-2 border-black p-6">
           <div className="flex justify-center items-center mb-2">
-            <ul className="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
+            <ul className="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box ">
               <li className="menu-active">
                 <Link to={"/BMI/metric"}>Metric Units</Link>
               </li>
@@ -71,12 +63,6 @@ const BmiFormMetric = () => {
                 <Link to={"/BMI/us"}>US Units</Link>
               </li>
             </ul>
-            {/* <Link to={"/BMI"} className="mx-2">
-              Metric Units
-            </Link>
-            <Link to={"/BMI/us"} className="mx-5">
-              US Units
-            </Link> */}
           </div>
           <div className="flex justify-center items-center">
             <Input
@@ -101,12 +87,12 @@ const BmiFormMetric = () => {
           <div className="flex justify-center items-center">
             <Button
               buttonname="Calculate"
-              className=" bg-green-500 hover:bg-green-600 hover:text-white"
+              className=" bg-green-500 hover:bg-green-600 hover:text-white m-3"
               onClick={onClickSubmitHandler}
             />
             <Button
               buttonname="Clear"
-              className=" bg-gray-400 hover:bg-gray-500 hover:text-white"
+              className=" bg-gray-400 hover:bg-gray-500 hover:text-white m-3"
               onClick={onClickClearHandler}
             />
           </div>

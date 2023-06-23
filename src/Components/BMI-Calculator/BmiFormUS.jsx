@@ -2,6 +2,7 @@ import { useState } from "react";
 import Input from "../../Shared/Input";
 import Button from "../../Shared/Button";
 import { Link } from "react-router-dom";
+import Header from "../Header/Header";
 const BmiFormUS = () => {
   const [heightFeet, setHeightFeet] = useState("");
   const [heightInch, setHeightInch] = useState("");
@@ -62,17 +63,8 @@ const BmiFormUS = () => {
   };
   return (
     <>
-      <header>
-        <div className=" text-center">
-          <p className="font-bold text-4xl font-serif tracking-wide mt-2 mb-2 p-2 text-red-900">
-            BMI Calculator
-          </p>
-          <p className=" text-white bg-neutral-600 hover:bg-neutral-400  hover:text-black hover:font-bold hover:tracking-wide p-2 mt-5 font-mono ">
-            Body Mass Index
-          </p>
-        </div>
-      </header>
-      <div className="border-solid border-2 border-indigo-600 m-5 p-9 flex justify-evenly">
+      <Header />
+      <div className="border-solid border-2 border-indigo-600 m-5 p-9 flex flex-col justify-evenly md:flex-row md:justify-evenly">
         {/* BMI Calculator Form */}
         <div className="border-2 border-black p-5">
           <div className="flex justify-center items-center mb-2">
@@ -84,12 +76,6 @@ const BmiFormUS = () => {
                 <Link to={"/BMI/us"}>US Units</Link>
               </li>
             </ul>
-            {/* <Link to={"/BMI/metric"} className="mx-2">
-              Metric Units
-            </Link>
-            <Link to={"/BMI/us"} className="mx-5">
-              US Units
-            </Link> */}
           </div>
           <div className="flex justify-center items-center">
             <Input
@@ -132,8 +118,8 @@ const BmiFormUS = () => {
           </div>
         </div>
         {/* BMI Result Show */}
-        <div className="border border-dashed border-black p-5">
-          <div className=" text-center font-serif font-medium text-3xl p-3 w-96 text-violet-900 bg-purple-200">
+        <div className="border border-dashed border-black p-5 m-5px">
+          <div className=" text-center font-serif font-medium text-3xl p-3 w-auto text-violet-900 bg-purple-200">
             Result
           </div>
 
